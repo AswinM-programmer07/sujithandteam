@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Storage Space</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar" style="margin-bottom: 100px;">
+        <div class="logo">
+            <a href="home.html">Space Store</a>
+        </div>
+        
+        <div class="nav-links" id="nav-links">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="details.html">Details</a></li>
+                <li><a href="reopen.html">Reopen</a></li>
+                <li><a href="listings.html">Listing</a></li>
+                <li><a href="book.html">Book</a></li>
+            </ul>
+        </div>
+    
+        <!-- Menu Icon for small screens -->
+        <div class="menu-icon" id="menu-icon" onclick="toggleMenu()">
+            &#9776;
+        </div>
+    </nav>
+    <h2>Book Storage Space</h2>
+    <form id="storage-form">
+        <label>Image of Storage Space: <input type="file" id="image" required></label>
+        <label>Cost per Day: <input type="number" id="cost" required></label>
+        <label>Area: <input type="text" id="area" required></label>
+        <label>Location: <input type="text" id="location" required></label>
+        <label>Storage Type:</label>
+        <select id="storage-type" required>
+            <option value="Self-Storage Units">Self-Storage Units</option>
+            <option value="Vehicle Storage">Vehicle Storage</option>
+            <option value="Portable Storage Containers">Portable Storage Containers</option>
+            <option value="Business Storage Spaces">Business Storage Spaces</option>
+            <option value="Warehouse Storage and Fulfillment Centers">Warehouse Storage and Fulfillment Centers</option>
+            <option value="Locker Storage">Locker Storage</option>
+            <option value="Student Storage Units">Student Storage Units</option>
+            <option value="Wine Storage">Wine Storage</option>
+            <option value="Data Storage Centers">Data Storage Centers</option>
+        </select>
+        <button type="button" onclick="submitStorageForm()">Submit</button>
+    </form>
+    <div class="footer" style="margin-top: 10px;">
+        <div class="contact">
+            <h3>Contact Us</h3>
+            <p><span>Address:</span> ***********</p>
+            <p><span>Email:</span> ***********</p>
+            <p><span>Phone:</span> ***********</p>
+        </div>
+
+        <!-- Social Media Icons -->
+        <div class="social-media">
+            <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </div>
+    </div>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

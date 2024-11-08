@@ -1,0 +1,1021 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+.card-container, #listing-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+.card {
+    padding: 20px;
+    border: 1px solid #ddd;
+    width: 200px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.card:hover {
+    background-color: #f0f0f0;
+}
+.hidden { display: none; }
+/* Existing styles... */
+
+.rating {
+    margin-top: 10px;
+}
+
+.stars {
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.star {
+    font-size: 2rem;
+    color: #ddd;
+    transition: color 0.3s;
+}
+
+.star.selected {
+    color: gold;
+}
+
+/* Existing styles... */
+
+.rating {
+    margin-top: 10px;
+}
+
+.stars {
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.star {
+    font-size: 2rem;
+    color: #ddd;
+    transition: color 0.3s;
+}
+
+.star.selected {
+    color: gold;
+}
+
+.sold-card {
+    background-color: #ccc;
+    color: #666;
+    pointer-events: none; /* Prevent further clicks on sold cards */
+    opacity: 0.8;
+}
+/* Basic styling */
+
+.rating {
+    margin-top: 10px;
+}
+
+.stars {
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.star {
+    font-size: 2rem;
+    color: #ddd;
+    transition: color 0.3s;
+}
+
+.star.selected {
+    color: gold;
+}
+
+.sold-card {
+    background-color: #ccc;
+    color: #666;
+    pointer-events: none; /* Prevent further clicks on sold cards */
+    opacity: 0.8;
+}
+/* styles.css */
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation Bar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px 20px;
+}
+
+.navbar .logo a {
+    color: #fff;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+.navbar .nav-links {
+    display: flex;
+}
+
+.navbar .nav-links ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar .nav-links li {
+    margin: 0 15px;
+}
+
+.navbar .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.navbar .menu-icon {
+    display: none;
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Responsive Styling */
+@media screen and (max-width: 768px) {
+    .navbar .nav-links {
+        display: none;
+    }
+
+    .navbar .menu-icon {
+        display: block;
+    }
+
+    .navbar .nav-links.active {
+        display: block;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #333;
+        width: 200px;
+        text-align: right;
+        padding: 10px;
+    }
+
+    .navbar .nav-links ul {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .navbar .nav-links li {
+        margin: 10px 0;
+    }
+}
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and Main Container */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    padding: 20px;
+    color: #333;
+}
+
+/* Header */
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 30px;
+    color: #333;
+}
+
+/* Search and Filter Controls */
+#search {
+    width: 30%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#type-filter {
+    width: 30%;
+    padding: 10px;
+    margin-left: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#search, #type-filter {
+    display: inline-block;
+}
+
+/* Listing Container */
+#listing-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three cards per row */
+    gap: 20px;
+    justify-items: center;
+    margin-top: 20px;
+}
+
+@media screen and (max-width: 1024px) {
+    #listing-container {
+        grid-template-columns: repeat(2, 1fr); /* Two cards per row for medium screens */
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #listing-container {
+        grid-template-columns: 1fr; /* One card per row for small screens */
+    }
+
+    #search, #type-filter {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+/* Card Style */
+.card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 300px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card .card-info {
+    padding: 15px;
+    text-align: center;
+}
+
+.card .card-info h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.card .card-info p {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.card .card-info .price {
+    font-size: 16px;
+    font-weight: bold;
+    color: #2c7a7b;
+}
+
+.card .card-info .type {
+    font-size: 14px;
+    font-weight: normal;
+    color: #555;
+}
+
+.card .card-info .button {
+    background-color: #2c7a7b;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.card .card-info .button:hover {
+    background-color: #1d5a5a;
+}
+
+/* Loading/Empty State for Listings */
+#listing-container.empty {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 300px;
+    font-size: 20px;
+    color: #888;
+}
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and Main Container */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    padding: 20px;
+    color: #333;
+}
+
+/* Header */
+h2 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #333;
+    animation: fadeIn 1s ease-out;
+}
+
+/* Storage Details Section */
+#details-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+    animation: slideIn 1s ease-out;
+}
+
+/* Storage Image */
+#details-container img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+/* Storage Information */
+#details-container h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #2c7a7b;
+}
+
+#details-container p {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+/* Rating Section */
+.rating {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.rating label {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.stars {
+    display: flex;
+    justify-content: center;
+}
+
+.star {
+    font-size: 30px;
+    color: #ccc;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.star:hover,
+.star.selected {
+    color: #ff9800;
+}
+
+/* Action Button (Book/Open) */
+#action-button {
+    display: flex;
+    justify-content: center;
+}
+
+#action-button button {
+    background-color: #202727;
+    color: #fff;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#action-button button:hover {
+    background-color: #1d5a5a;
+    transform: translateY(-3px);
+}
+
+#action-button button:disabled {
+    background-color: #888;
+    cursor: not-allowed;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    #details-container {
+        padding: 15px;
+    }
+
+    .star {
+        font-size: 25px;
+    }
+
+    #action-button button {
+        padding: 12px 25px;
+    }
+}
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and Background */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    padding: 20px;
+    color: #333;
+    text-align: center;
+    animation: fadeIn 1s ease-out;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #2b3030;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    transition: all 0.3s ease;
+}
+
+/* Logo */
+.logo a {
+    font-size: 24px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.logo a:hover {
+    color: #33bd9a;
+}
+
+/* Navbar Links */
+.nav-links {
+    display: flex;
+    justify-content: space-around;
+    flex-grow: 1;
+}
+
+.nav-links ul {
+    display: flex;
+    list-style-type: none;
+}
+
+.nav-links ul li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #298b8b;
+}
+
+/* Menu Icon for Small Screens */
+.menu-icon {
+    display: none;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Welcome Message */
+h1 {
+    font-size: 36px;
+    color: #333;
+    margin-top: 40px;
+    animation: fadeIn 1s ease-out;
+}
+
+#username-display {
+    color: #2c7a7b;
+}
+
+/* Buttons */
+button {
+    background-color: #2c7a7b;
+    color: white;
+    padding: 15px 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #1e2020;
+    transform: translateY(-3px);
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    /* Adjusting Navbar for small screens */
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .nav-links ul {
+        display: block;
+    }
+
+    .nav-links ul li {
+        margin: 10px 0;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .nav-links.active {
+        display: block;
+    }
+
+    button {
+        width: 90%;
+        padding: 12px;
+        font-size: 16px;
+    }
+}
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeIn 1s ease-out;
+}
+
+/* Header Styling */
+h2 {
+    font-size: 32px;
+    color: #202222;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: bold;
+    animation: fadeIn 1s ease-out;
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards;
+    animation-delay: 0.2s;
+}
+
+/* Form Styling */
+#storage-form {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    animation: slideUp 1s ease-out;
+}
+
+/* Form Labels */
+label {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 8px;
+    display: block;
+    opacity: 0;
+    animation: fadeIn 0.8s ease-out forwards;
+    animation-delay: 0.3s;
+}
+
+/* Input Fields Styling */
+input[type="file"],
+input[type="number"],
+input[type="text"],
+select {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    animation: fadeIn 0.8s ease-out forwards;
+    animation-delay: 0.5s;
+}
+
+/* Input Focus Effect */
+input[type="file"]:focus,
+input[type="number"]:focus,
+input[type="text"]:focus,
+select:focus {
+    border-color: #2c7a7b;
+    outline: none;
+    box-shadow: 0 0 8px rgba(44, 122, 123, 0.5);
+}
+
+/* Button Styling */
+button {
+    background-color: #2c7a7b;
+    color: white;
+    padding: 12px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    align-self: center;
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards;
+    animation-delay: 1s;
+}
+
+/* Button Hover Effect */
+button:hover {
+    background-color: #1e2020;
+    transform: translateY(-3px);
+}
+
+/* Button Active Effect */
+button:active {
+    transform: translateY(1px);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+    #storage-form {
+        padding: 20px;
+        width: 100%;
+    }
+
+    button {
+        width: 100%;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Hover Animations on Inputs */
+input[type="file"]:hover,
+input[type="number"]:hover,
+input[type="text"]:hover,
+select:hover {
+    border-color: #2c7a7b;
+    box-shadow: 0 0 8px rgba(44, 122, 123, 0.3);
+    transition: box-shadow 0.3s ease;
+}
+
+/* Form Label Animation */
+label {
+    opacity: 0;
+    animation: labelFadeIn 0.6s ease-out forwards;
+}
+
+@keyframes labelFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeIn 1s ease-out;
+}
+
+/* Header Styling */
+h2 {
+    font-size: 32px;
+    color: #2c7a7b;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: bold;
+    animation: fadeIn 1s ease-out;
+    opacity: 0;
+    animation-delay: 0.2s;
+    animation-fill-mode: forwards;
+}
+
+/* Reopen Container */
+#reopen-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    animation: fadeIn 1s ease-out forwards;
+    opacity: 0;
+    animation-delay: 0.4s;
+}
+
+/* Storage Card Styling */
+.reopen-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    position: relative;
+    opacity: 0;
+    animation: fadeInCard 1s ease-out forwards;
+}
+
+/* Hover Effect for Cards */
+.reopen-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Card Content */
+.reopen-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Card Title */
+.reopen-card h3 {
+    font-size: 20px;
+    color: #2c7a7b;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+/* Card Info */
+.reopen-card p {
+    font-size: 16px;
+    color: #555;
+    margin-top: 5px;
+}
+
+/* Reopen/Delete Button Styles */
+.reopen-btn, .delete-btn {
+    background-color: #2c7a7b;
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    position: absolute;
+    bottom: 20px;
+    width: 45%;
+}
+
+/* Reopen Button Hover */
+.reopen-btn:hover {
+    background-color: #1d5a5a;
+    transform: translateY(-3px);
+}
+
+/* Delete Button Hover */
+.delete-btn:hover {
+    background-color: #d32f2f;
+    transform: translateY(-3px);
+}
+
+/* Reopen Button Active */
+.reopen-btn:active {
+    transform: translateY(2px);
+}
+
+/* Delete Button Active */
+.delete-btn:active {
+    transform: translateY(2px);
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    h2 {
+        font-size: 28px;
+    }
+
+    #reopen-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInCard {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer .contact {
+    margin-bottom: 20px;
+}
+
+.footer .contact p {
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+.footer .contact p span {
+    font-weight: bold;
+}
+
+/* Social media buttons section */
+.footer .social-media {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Styling individual social media buttons */
+.footer .social-media a {
+    color: white;
+    font-size: 30px; /* Adjust size */
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.footer .social-media a:hover {
+    background-color: #4CAF50; /* Green hover effect */
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 600px) {
+    .footer .social-media a {
+        font-size: 25px; /* Smaller icon size on mobile */
+        padding: 8px;
+    }
+}
